@@ -7,7 +7,7 @@ Installation Instructions
    install` inside the project root directory.
 - Create Mysql Database call it capstone-project
 - Rename the `.env.example` to `.env`
-- Change the following environment variables to match your server configurations
+- Change the following environment variables inthe file `.env` to match your server configurations
 ```
 	DB_DATABASE=capstone-project
 	DB_USERNAME=root
