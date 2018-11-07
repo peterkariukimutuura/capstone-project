@@ -49,7 +49,17 @@
                                 @endif
                             </li>
                         @else
+                            @if(Route::currentRouteName()=="todo")
+                            <li class="nav-item">
+                                <a class="nav-link"  href="{{route('home')}}">View Todos</a>
+                            </li>
+                            @else
+                            <li class="nav-item">
+                                <a class="nav-link"  href="{{route('todo')}}">Add Todo</a>
+                            </li>
+                            @endif
                             <li class="nav-item dropdown">
+
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -73,6 +83,7 @@
         </nav>
 
         <main class="py-4">
+            
             @yield('content')
         </main>
     </div>
