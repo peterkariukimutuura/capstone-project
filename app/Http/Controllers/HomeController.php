@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-         $todos= Todo::where('user_id',Auth::user()->id)->latest()->get();
+         $todos= Todo::where('user_id',Auth::user()->id)->latest()->paginate(5);
 
 
         return view('home',compact('todos'));

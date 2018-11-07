@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Welcome {{Auth::user()->name}}  to your tod list manager.
+                <div class="card-header">Welcome {{Auth::user()->name}}  to your todo list manager.
                     
                </div>
 
@@ -35,9 +35,10 @@
                                 <td><a href="/todo/delete/{{$todo->id}}">Delete</a></td>
                             </tr>
                             @endforeach
+
                         </table>
+                        {{ $todos->links() }}
                         <hr>
-                        <a class="nav-link text-center"  href="{{route('todo')}}">Add More Todo</a>
                         @else
                         <div class="alert alert-info text-center" style="width: 100%;">
                             You have not added any Todos! 
